@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //   Version1
+    /**
+    *
+    algo for palindrome
+    edgecase
+    1. check if input is string(return "enter a valid input")
+    2. check if input is blank(return "enter a valid input")
+
+    3. iterate the input
+    4. check first element from the last element return
+    */
+    // function checkPalindrome(str) {
+    // if (str === undefined || str === null || typeof str === "number") {
+    //   return "Enter a proper Value";
+    // }
+    //   let result = str
+    //     .toLowerCase()
+    //     .replace(/ /g, "")
+    //     .replace(/[^a-zA-Z ]/g, "");
+    //   for (let i = 0; i < result.length / 2; i++) {
+    //     if (result[i] !== result[result.length - 1 - i]) {
+    //       return "It is not a palindrome";
+    //     }
+    //   }
+    //   return "It is a palindrome";
+    // }
+    // console.log(checkPalindrome("Sir, I demand, I am a maid named Iris."));
+
+    // Version 2
+
+    /**
+     * Algorithm
+     * EdgeCase
+     * 1. check input is undefined or null or number (return Enter a proper Value)
+     *
+     * 1. split the string output will be in array
+     * 2. reverse the array
+     * 3. join the array output will be in string
+     * 4. check if input is not equal to reversed (return It is not Palindrome)
+     * 5. if equal then (return It is Palindrome)
+     */
+
+    function checkPalindrome(str) {
+      if (str === undefined || str === null || typeof str === "number") {
+        return "Enter a proper Value";
+      }
+      let result = str
+        .toLowerCase()
+        .replace(/ /g, "")
+        .replace(/[^a-zA-Z ]/g, "");
+      const reversed = result.split("").reverse().join("");
+      if (reversed !== result) {
+        return "It is not a Palindrome";
+      } else {
+        return "It is Palindrome";
+      }
+    }
+
+    console.log(checkPalindrome("Sir, I demand, I am a maid named Iris."));
+  </script>
+</html>
